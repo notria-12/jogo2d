@@ -244,21 +244,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(60, 75)
+size = Vector2(19, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=1836440101]
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411769805]
 texture_filter = 1
-position = Vector2(2, 2)
-scale = Vector2(3, 3)
+position = Vector2(-26, 8)
+scale = Vector2(1, 0.9)
 sprite_frames = SubResource("SpriteFrames_t4otl")
 animation = &"jumping"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746946949]
-position = Vector2(4, 12.5)
+position = Vector2(-25.5, 8)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=803419713]

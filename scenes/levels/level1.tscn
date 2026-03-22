@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbqxr55kyvsef" path="res://assets/images/Background/Green.png" id="1_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://dhoun1f8npy1o" path="res://assets/images/TileMap/Terrain (16x16).png" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://7rbxdma4lb8" path="res://scenes/player.tscn" id="2_4tcl0"]
+[ext_resource type="PackedScene" uid="uid://bx23ei71ybv4x" path="res://scenes/snail.tscn" id="4_bfxgj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("1_x6ivy")
@@ -182,5 +183,13 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAGAAoAAAAAAAEAAAAGAAoAAAAAAAIAAAAGAAo
 tile_set = SubResource("TileSet_dd0lh")
 
 [node name="Player" parent="." unique_id=1836440101 instance=ExtResource("2_4tcl0")]
-position = Vector2(178.66669, 486.6667)
+position = Vector2(185, 505.33334)
 scale = Vector2(3, 3)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=74364161]
+
+[node name="Snail" parent="Enemies" unique_id=1839708522 instance=ExtResource("4_bfxgj")]
+position = Vector2(394.6667, 636.3334)
+
+[node name="Snail2" parent="Enemies" unique_id=1238710089 instance=ExtResource("4_bfxgj")]
+position = Vector2(975.0001, 635.6667)

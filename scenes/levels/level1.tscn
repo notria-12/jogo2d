@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7rbxdma4lb8" path="res://scenes/player.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bx23ei71ybv4x" path="res://scenes/snail.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://cl00yfhyqetgu" path="res://scenes/apple.tscn" id="5_dywbp"]
+[ext_resource type="Texture2D" uid="uid://bdlkrrln1v656" path="res://assets/images/TileMap/Checkpoint (Flag Idle)(64x64).png" id="6_1seuy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("1_x6ivy")
@@ -167,6 +168,87 @@ texture = ExtResource("1_x6ivy")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r1tl"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a7m2"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plydf"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ntmo"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkeig"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfihu"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgguw"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jprdt"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps2vj"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbmf2"]
+atlas = ExtResource("6_1seuy")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xax6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r1tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a7m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plydf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ntmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkeig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfihu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgguw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jprdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps2vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbmf2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7tkf"]
+size = Vector2(44.500042, 95.33333)
+
 [node name="LevelRoot" type="Node2D" unique_id=892601035]
 scale = Vector2(3, 3)
 
@@ -208,3 +290,16 @@ position = Vector2(1184, 565.3334)
 
 [node name="Apple4" parent="Apples" unique_id=803052731 instance=ExtResource("5_dywbp")]
 position = Vector2(953.3334, 151)
+
+[node name="Flag" type="AnimatedSprite2D" parent="." unique_id=78055834]
+texture_filter = 1
+position = Vector2(1216.6667, 177)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1xax6")
+autoplay = "default"
+
+[node name="Exit" type="Area2D" parent="." unique_id=1598321471]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1461013693]
+position = Vector2(1306.4167, 191)
+shape = SubResource("RectangleShape2D_g7tkf")
